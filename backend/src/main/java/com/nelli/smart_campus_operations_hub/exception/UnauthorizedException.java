@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * Thrown when a user attempts an operation without required ownership/authorization.
+ * This error is thrown when a user attempts an operation without required ownership/authorization.
  */
 @ResponseStatus(HttpStatus.FORBIDDEN)
 public class UnauthorizedException extends RuntimeException {
