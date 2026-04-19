@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Manages facility catalog CRUD and search operations for campus assets.
+ * This manages facility catalog CRUD and search operations for campus assets.
  */
 @RestController
 @RequestMapping("/api/v1/facilities")
