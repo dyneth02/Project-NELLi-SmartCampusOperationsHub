@@ -33,7 +33,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Manages booking creation, recurrence, approvals, cancellation, and query operations.
+ * This manages booking creation, recurrence, approvals, cancellation, and query operations.
  */
 @Service
 @RequiredArgsConstructor
