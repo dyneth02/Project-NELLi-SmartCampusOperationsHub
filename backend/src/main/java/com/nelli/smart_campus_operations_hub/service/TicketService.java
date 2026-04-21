@@ -88,6 +88,7 @@ public class TicketService {
     /**
      * Updates editable ticket details while ticket is OPEN and user is owner.
      *
+     *
      * @param ticketId ticket id
      * @param request update request
      * @param userEmail requester email
