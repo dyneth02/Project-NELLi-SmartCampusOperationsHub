@@ -21,7 +21,7 @@ import org.springframework.web.context.request.WebRequest;
  * Global REST exception translator that converts known domain and framework exceptions into
  * standardized {@link ErrorResponse} payloads.
  *
- * <p>4xx errors are logged as warnings, while unexpected server failures are logged as errors.
+ * 4xx errors are logged as warnings, while unexpected server failures are logged as errors.
  */
 @RestControllerAdvice
 @Slf4j
