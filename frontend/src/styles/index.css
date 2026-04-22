@@ -1,1 +1,182 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Light theme variables */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-tertiary: #f3f4f6;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f9fafb;
+
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --text-accent: #0891b2;
+
+    --border-subtle: rgba(0, 0, 0, 0.05);
+    --border-default: rgba(0, 0, 0, 0.1);
+    --border-accent: rgba(8, 145, 178, 0.3);
+
+    --primary-color: #0891b2;
+    --primary-hover: #06b6d4;
+
+    /* Legacy / Vite starter aliases (App.css) */
+    --border: var(--border-default);
+    --accent: var(--primary-color);
+    --accent-bg: rgba(8, 145, 178, 0.12);
+    --accent-border: var(--border-accent);
+    --text-h: var(--text-primary);
+    --social-bg: var(--bg-secondary);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+    /* Dark theme variables */
+    --bg-primary: #0a0a0b;
+    --bg-secondary: #151518;
+    --bg-tertiary: #1e1e22;
+    --bg-card: #1a1a1d;
+    --bg-card-hover: #252529;
+
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-muted: #6b6b6b;
+    --text-accent: #40e0d0;
+
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --border-default: rgba(255, 255, 255, 0.1);
+    --border-accent: rgba(64, 224, 208, 0.3);
+
+    --primary-color: #40e0d0;
+    --primary-hover: #7fffd4;
+
+    --border: var(--border-default);
+    --accent: var(--primary-color);
+    --accent-bg: rgba(64, 224, 208, 0.12);
+    --accent-border: var(--border-accent);
+    --text-h: var(--text-primary);
+    --social-bg: var(--bg-secondary);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-[var(--bg-primary)] text-[var(--text-primary)] font-sans;
+        @apply transition-colors duration-300;
+    }
+
+    html {
+        @apply scroll-smooth;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-display;
+    }
+}
+
+@layer components {
+    .container-custom {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .card {
+        @apply bg-[var(--bg-card)] border border-[var(--border-default)] rounded-xl;
+        @apply shadow-card hover:shadow-card-hover transition-all duration-300;
+    }
+
+    .card-glow {
+        @apply card relative overflow-hidden;
+        @apply before:absolute before:inset-0 before:bg-gradient-glow before:opacity-0;
+        @apply hover:before:opacity-100 before:transition-opacity before:duration-500;
+    }
+
+    .btn-primary {
+        @apply bg-gradient-accent text-white font-semibold px-6 py-3 rounded-lg;
+        @apply hover:shadow-glow-md transition-all duration-300;
+        @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    .btn-secondary {
+        @apply bg-[var(--bg-tertiary)] text-[var(--text-primary)] font-semibold px-6 py-3 rounded-lg;
+        @apply border border-[var(--border-default)] hover:border-[var(--border-accent)];
+        @apply transition-all duration-300;
+    }
+
+    .btn-ghost {
+        @apply text-[var(--text-secondary)] hover:text-[var(--text-primary)];
+        @apply hover:bg-[var(--bg-card-hover)] px-4 py-2 rounded-lg;
+        @apply transition-all duration-200;
+    }
+
+    .input-field {
+        @apply w-full bg-[var(--bg-tertiary)] border border-[var(--border-default)];
+        @apply text-[var(--text-primary)] px-4 py-3 rounded-lg;
+        @apply focus:border-[var(--border-accent)] focus:ring-2 focus:ring-primary/20;
+        @apply transition-all duration-200 outline-none;
+    }
+
+    .badge {
+        @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    }
+
+    .badge-success {
+        @apply bg-status-success/10 text-status-success border border-status-success/20;
+    }
+
+    .badge-warning {
+        @apply bg-status-warning/10 text-status-warning border border-status-warning/20;
+    }
+
+    .badge-error {
+        @apply bg-status-error/10 text-status-error border border-status-error/20;
+    }
+
+    .badge-info {
+        @apply bg-status-info/10 text-status-info border border-status-info/20;
+    }
+}
+
+@layer utilities {
+    .text-gradient {
+        @apply bg-gradient-accent bg-clip-text text-transparent;
+    }
+
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .backdrop-blur-glass {
+        @apply backdrop-blur-xl bg-[var(--bg-card)]/80;
+    }
+}
+
+.Toastify__toast {
+    @apply bg-[var(--bg-card)] text-[var(--text-primary)];
+    @apply border border-[var(--border-default)] rounded-xl;
+}
+
+.Toastify__toast--success {
+    @apply border-status-success/30;
+}
+
+.Toastify__toast--error {
+    @apply border-status-error/30;
+}
