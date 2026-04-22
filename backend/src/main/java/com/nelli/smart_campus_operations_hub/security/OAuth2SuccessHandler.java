@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * Handles successful OAuth2 authentication by provisioning/updating user state,
- * issuing JWT credentials, and redirecting client to frontend callback route.
+ * issuing JWT credentials and redirecting client to frontend callback route.
  */
 @Component
 @RequiredArgsConstructor
